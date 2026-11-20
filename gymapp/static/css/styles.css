@@ -1,0 +1,5 @@
+:root {
+    --brand-primary: #4880FF;
+    --text-main: #ffffff;
+    --bs-primary: var(--brand-primary);
+}

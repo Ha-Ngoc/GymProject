@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="d-flex flex-grow-1 justify-content-center align-items-center">
+  <div class="card rounded-4 p-4 p-md-5 border-0 shadow" style="width: 50%">
+    <h1 class="text-center text-primary mt-1">ĐĂNG KÝ</h1>
+
+    <form method="post" action="/login">
+      <div class="form-floating mb-3 mt-3">
+        <input required type="text" class="form-control" id="username" placeholder="Tên đăng nhập" name="username"/>
+        <label for="username">Tên đăng nhập</label>
+      </div>
+
+      <div class="form-floating mt-3 mb-3">
+        <input required type="password" class="form-control" id="pwd" placeholder="Mật khẩu" name="password"/>
+        <label for="pwd">Mật khẩu</label>
+      </div>
+
+       <div class="form-floating mt-3 mb-3">
+        <input required type="password" class="form-control" id="confirm" placeholder="Xác nhận Mật khẩu" name="confirm"/>
+        <label for="confirm">Xác nhận mật khẩu</label>
+      </div>
+      <button type="submit" class="btn btn-primary d-flex mx-auto">Đăng nhập</button>
+    </form>
+  </div>
+</div>
+
+{% endblock  %}

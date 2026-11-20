@@ -1,0 +1,40 @@
+{% set left_menu = [
+    ('index', 'Trang chủ', 'bi-house-door'),
+    ('login_view', 'Giới thiệu', 'bi-info-circle')
+] %}
+
+{% set right_menu = [
+    ('login_view', 'Đăng nhập', 'bi-box-arrow-in-right'),
+    ('register_view', 'Đăng ký', 'bi-person-plus')
+] %}
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold fs-4" href="/">
+      <i class="bi bi-activity me-2"></i>GYM
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav me-auto">
+        {% for endpoint, label, icon in left_menu %}
+        <li class="nav-item">
+          <a class="nav-link {{ 'active' if request.endpoint == endpoint else '' }}" href=" {{ url_for(endpoint) }} ">
+            <i class="bi {{icon}} me-1"></i>{{label}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        {% for endpoint, label, icon in right_menu %}
+        <li class="nav-item">
+          <a class="nav-link {{ 'active' if request.endpoint == endpoint else '' }}" href=" {{ url_for(endpoint) }} ">
+            <i class="bi {{icon}} me-1"></i>{{label}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
